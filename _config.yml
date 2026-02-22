@@ -1,0 +1,24 @@
+title: Zeinab Rahbar
+name: Zeinab Rahbar
+description: "AI Researcher | Graph Learning"
+url: "https://zeinabrahbar.github.io"
+baseurl: ""
+
+# Author Profile Sidebar
+author:
+  name: "Zeinab Rahbar"
+  avatar: "bio-photo.jpg" # Upload a photo named bio-photo.jpg to your repo
+  bio: "AI Researcher @ University of Isfahan"
+  location: "Isfahan"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:ZeinabRahbar2022@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/zeinabrahbar"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/zeinab-rahbar/"
+
+theme: jekyll-theme-minimal # Or 'academicpages' if you use the template
