@@ -1,60 +1,72 @@
-# > ZEINAB RAHBAR
-## Senior Graph Architect | Multimodal AI Researcher
-### *Specializing in Spectral Graph Theory & Spatio-Temporal Signal Processing*
+# Zeinab Rahbar
+
+**AI Researcher | Graph Learning & Geometric Deep Learning**
+
+📍 Isfahan, Iran | 📧 ZeinabRahbar2022@gmail.com | 📞 +98 9100724610  
+🔗 [LinkedIn](https://www.linkedin.com/in/zeinab-rahbar/) | 💻 [GitHub](https://github.com/zeinabrahbar)
 
 ---
 
-## ⚡ Technical Philosophy
-As a Researcher and Engineer, I bridge the gap between **pure mathematical logic** and **scalable industrial deployment**. My approach focuses on "The Gem"—finding the core inductive bias that allows a system to outperform standard "black-box" models.
+## Research Summary
+
+AI researcher with a strong background in graph neural networks, latent graph learning, and multimodal representation learning, with a growing focus on theoretical and efficient processing of graph-structured data. Experienced in learning graph structures from data and analyzing information propagation and generalization behavior in graph-based models. Interested in graph signal processing, sampling and reconstruction of graphs, graph compression, biomedical imaging and theory-driven geometric deep learning.
 
 ---
 
-## 🧪 Core Framework: GCNRW (Graph Convolutional Random Walk)
-*MSc Thesis Project | Grade: 18.60/20 (Top 1%)*
+## Education
 
-After 5 months of deep architectural iteration, I developed **GCNRW**, a framework that solves the convergence bottleneck in heterophilic graphs by integrating **Random Walk Transition Matrices** directly into the spectral filtering process.
+**M.Sc. in Computer Engineering, Artificial Intelligence** | University of Isfahan (2022–2025)
+- *Thesis:* Developing graph neural networks for multimodal non-graph textual and visual data
+- *Grade:* 18.60/20
+- *Supervisors:* Dr. Peyman Adibi, Dr. Alireza Darvishy (ZHAW, Switzerland)
 
-**Mathematical Foundation:**
-Rather than relying on the static Graph Laplacian $L = I - D^{-1/2} A D^{-1/2}$, GCNRW utilizes a diffusion-based transition operator:
-$$P^k = (D^{-1}A)^k$$
-This enables the model to capture long-range dependencies and non-stationary signals that standard GCNs fail to resolve.
-
-
+**B.Sc. in Computer Engineering** | Arak University (2018–2022)
 
 ---
 
-## 🏗️ Professional Experience
-### **Computer Vision Engineer | Senior Lead Track**
-* **Architected** production-level CV pipelines for real-time inference.
-* **Optimized** tensor operations, reducing processing latency by 30% without sacrificing precision.
-* **Engineered** robust data-loading architectures for multimodal datasets (Image, Signal, Graph).
+## Selected Research & Projects
+
+- **Latent Graph Learning for Multimodal Disease Prediction** – Model that infers latent graph topologies from heterogeneous data (MRI, fMRI, clinical tests). Evaluated on TADPOLE and ABIDE datasets.
+
+- **GNN-based Visual Question Answering (VQA)** – Modeled visual/textual entities as graphs using GNNs for propagation. Experiments on VQA v2 dataset.
+
+- **Graph Convolutional Networks with random weights** – Implemented approach from paper (no public code available).
 
 ---
 
-## 📂 Active Research Streams
-### 1. Industrial Predictive Maintenance (PdM)
-Applying GSP (Graph Signal Processing) to sensor-fusion networks to detect anomaly propagation in machinery before catastrophic failure.
+## Professional Experience
 
-### 2. Medical Multimodal Fusion
-Integrating Histopathology GNNs with MRI clinical data to identify spatial biomarkers in prostate cancer recurrence.
-
-### 3. Spectral GNN Theory
-Exploring the stability of spectral filters in "Continuous Product Graphs" to improve the robustness of graph-based deep learning.
+**Machine Vision Engineer** | HoopadVision, Isfahan (Feb 2024 – Mar 2025)
+- Improved real-time fire detection accuracy with time-series analysis
+- Built human action recognition system (running, falling) – 4 camera streams @ 15 FPS on single GPU
 
 ---
 
-## 🛠️ Stack & Expertise
-* **Languages:** Python (Expert), C++, LaTeX (Academic)
-* **Deep Learning:** PyTorch, PyTorch Geometric, DGL
-* **Mathematics:** Linear Algebra, Spectral Theory, Random Processes
-* **Architecture:** CI/CD for ML, High-Performance Compute (HPC), System Design
+## Teaching & Mentorship
+
+- Teaching Assistant: Machine Learning, Computer Basics, HCI, Discrete Mathematics – University of Isfahan & Arak University
+- Python Instructor – Yasan Academy (2023–2024)
 
 ---
 
-## 📬 Connectivity
-* **LinkedIn:** [linkedin.com/in/zeinab-rahbar](https://www.linkedin.com/in/zeinab-rahbar/)
-* **Email:** [ZeinabRahbar2022@gmail.com](mailto:ZeinabRahbar2022@gmail.com)
-* **Location:** Isfahan (Global Remote Ready)
+## Technical Skills
+
+**Research Interests:** GNNs, Geometric Deep Learning, Multimodal ML, Biomedical Data, Medical Image Processing
+
+**Languages:** Python, C++
+
+**Frameworks:** PyTorch, TensorFlow, PyTorch Geometric, DGL, Ultralytics, FastAPI
+
+**Tools:** Docker, Git, Linux, VS Code
 
 ---
-*"The most elegant code is the one that solves a 5-month problem in 5 milliseconds of execution."*
+
+## Languages
+
+- **English:** IELTS 7.0 (L:7.5, R:7, W:6.5, S:7.5)
+- **Persian:** Native
+- **French:** Beginner (A1)
+
+---
+
+*Open to research collaborations and PhD opportunities.*
