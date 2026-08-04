@@ -26,6 +26,11 @@
   --color-link: #2952a3;
   --color-focus: #2952a3;
 
+  /* Signal accent — the "active edge" color in the hero graph motif.
+     Warm, mineral gold; stands apart from navy without competing with it. */
+  --color-signal: #b8863a;
+  --color-signal-soft: #f7ecd9;
+
   /* Type */
   --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -256,6 +261,14 @@ button {
   gap: var(--space-6);
 }
 
+.research-grid {
+  margin-bottom: var(--space-16);
+}
+
+.grid--single {
+  max-width: 420px;
+}
+
 @media (min-width: 640px) {
   .grid--2 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -425,6 +438,36 @@ button {
    -------------------------------------------------------------------------- */
 .hero {
   padding-block: var(--space-24) var(--space-20);
+  overflow: hidden;
+}
+
+.hero__container {
+  display: grid;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .hero__container {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+    gap: var(--space-10);
+  }
+
+  .hero__content {
+    max-width: 640px;
+  }
+}
+
+.hero__graph {
+  display: flex;
+  justify-content: center;
+  order: -1;
+}
+
+@media (min-width: 960px) {
+  .hero__graph {
+    order: 0;
+  }
 }
 
 .hero__eyebrow {
@@ -440,6 +483,17 @@ button {
   font-size: var(--fs-hero);
   letter-spacing: -0.01em;
   margin-bottom: var(--space-4);
+}
+
+.hero__identity {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.125rem, 1.1vw + 0.9rem, 1.375rem);
+  line-height: var(--lh-snug);
+  color: var(--color-accent);
+  max-width: 640px;
+  margin-bottom: var(--space-5);
 }
 
 .hero__role {
@@ -476,6 +530,128 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   6b. Hero graph — signature element
+   A latent-graph diagram standing in for a conventional hero photo: the
+   subject's portrait as the anchor node, her five research areas as the
+   satellites she connects them to. The animated pulses along each edge are
+   a literal illustration of "information propagation" — the exact
+   phenomenon her thesis studies — not a decorative flourish.
+   -------------------------------------------------------------------------- */
+.hero__graph-svg {
+  width: min(100%, 400px);
+  height: auto;
+  overflow: visible;
+}
+
+.hero__edge-base {
+  stroke: var(--color-border-strong);
+  stroke-width: 1.25;
+  fill: none;
+}
+
+.hero__edge-pulse {
+  stroke: var(--color-signal);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 8 130;
+  animation: hero-flow 3.6s linear infinite;
+  opacity: 0.9;
+}
+
+.hero__edge-pulse:nth-child(2) { animation-delay: -0.6s; }
+.hero__edge-pulse:nth-child(3) { animation-delay: -1.2s; }
+.hero__edge-pulse:nth-child(4) { animation-delay: -1.9s; }
+.hero__edge-pulse:nth-child(5) { animation-delay: -2.5s; }
+.hero__edge-pulse:nth-child(6) { animation-delay: -3.1s; }
+
+@keyframes hero-flow {
+  to { stroke-dashoffset: -138; }
+}
+
+.hero__center-ring {
+  fill: none;
+  stroke: var(--color-signal);
+  stroke-width: 1.5;
+  opacity: 0.55;
+}
+
+.hero__center-fill {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent);
+  stroke-width: 1.75;
+}
+
+.hero__center-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  fill: var(--color-accent);
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.hero__node {
+  cursor: pointer;
+}
+
+.hero__node circle {
+  fill: var(--color-bg);
+  stroke: var(--color-border-strong);
+  stroke-width: 1.25;
+  transition: stroke var(--transition-base), fill var(--transition-base);
+}
+
+.hero__node text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--color-text);
+  text-anchor: middle;
+  transition: fill var(--transition-base);
+  pointer-events: none;
+}
+
+.hero__node:hover circle,
+.hero__node:focus-visible circle {
+  stroke: var(--color-accent);
+  fill: var(--color-accent-soft);
+}
+
+.hero__node:hover text,
+.hero__node:focus-visible text {
+  fill: var(--color-accent);
+}
+
+.hero__node:focus-visible {
+  outline: none;
+}
+
+.hero__node:focus-visible circle {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__edge-pulse {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.7;
+  }
+}
+
+/* Gentle target highlight when a hero node links into a research card */
+.card[id] {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-6));
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card[id]:target {
+  border-color: var(--color-signal);
+  box-shadow: 0 0 0 3px var(--color-signal-soft);
+}
+
+/* --------------------------------------------------------------------------
    7. Cards (research interests, projects)
    -------------------------------------------------------------------------- */
 .card {
@@ -499,6 +675,18 @@ button {
 .card p {
   font-size: var(--fs-small);
   margin: 0;
+}
+
+.card__related {
+  margin-top: var(--space-3) !important;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs) !important;
+  color: var(--color-text-muted);
+}
+
+.card__related a {
+  color: var(--color-accent);
+  font-weight: 500;
 }
 
 .card__icon {
@@ -614,6 +802,47 @@ button {
   line-height: var(--lh-snug);
   margin-bottom: var(--space-4);
   max-width: 46ch;
+}
+
+.thesis__desc {
+  font-size: var(--fs-body);
+  max-width: 60ch;
+  margin-bottom: var(--space-6) !important;
+}
+
+.thesis__steps {
+  display: grid;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 700px) {
+  .thesis__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.thesis__step {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.thesis__step-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2) !important;
+}
+
+.thesis__step-desc {
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-3) !important;
+}
+
+.thesis .tag-row {
+  margin-bottom: 0;
 }
 
 .thesis dl {
