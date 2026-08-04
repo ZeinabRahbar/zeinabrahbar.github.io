@@ -2,47 +2,47 @@
 
 ## Personal academic website & portfolio
 
-This repository hosts the source code for my personal website – a living CV showcasing my research in **Graph Neural Networks**, **Geometric Deep Learning**, and **Multimodal Representation Learning**.
+This repository hosts the source for my personal website — a research portfolio covering my work in **Graph Neural Networks**, **Geometric Deep Learning**, and **Multimodal Representation Learning**.
 
 🔗 **Live site:** [zeinabrahbar.github.io](https://zeinabrahbar.github.io)
 
 ---
 
-## 👩‍🔬 About Me
+## About
 
-I'm an AI researcher with a Master's degree in Computer Engineering (Artificial Intelligence) from the University of Isfahan. My work focuses on:
+AI researcher with an M.Sc. in Computer Engineering (Artificial Intelligence) from the University of Isfahan. Research focus:
 
-- Graph Neural Networks (GNNs) & Latent Graph Learning
+- Graph Neural Networks (GNNs) & latent graph learning
 - Multimodal learning for biomedical applications
 - Graph signal processing and efficient graph-structured data processing
 - Visual Question Answering (VQA) using graph-based representations
 
 ---
 
-## 📄 What's Here
+## Structure
 
-| File | Purpose |
-|------|---------|
-| `index.md` | Main CV content for the website |
-| `_config.yml` | Jekyll site configuration (theme, sidebar, links) |
-| `bio-photo.jpg` | Profile photo (sidebar avatar) |
+Plain HTML/CSS/JS, no framework, no build step, no npm dependency — served directly by GitHub Pages.
 
----
+```
+.
+├── index.html            Page content and structure
+├── assets/
+│   ├── css/styles.css    Design system + component styles
+│   └── js/main.js        Sticky-nav scroll-spy, mobile menu toggle
+├── robots.txt
+├── sitemap.xml
+└── .nojekyll              Tells GitHub Pages to skip Jekyll processing
+```
 
-## 🛠 Local Development
+## Local development
 
-To preview the site locally:
+No build tools required. Either open `index.html` directly in a browser, or serve it locally:
 
 ```bash
-# Install Jekyll and bundler (if not already installed)
-gem install jekyll bundler
+python3 -m http.server 8000
+# then visit http://localhost:8000
+```
 
-# Clone the repository
-git clone https://github.com/zeinabrahbar/zeinabrahbar.github.io.git
-cd zeinabrahbar.github.io
+## Updating content
 
-# Install dependencies
-bundle install
-
-# Serve the site
-bundle exec jekyll serve
+All page copy lives directly in `index.html`, organized by section (`#research`, `#experience`, `#projects`, `#education`, `#skills`, `#contact`). Design tokens (colors, type, spacing) are defined once as CSS custom properties at the top of `assets/css/styles.css`.
